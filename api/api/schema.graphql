@@ -1,0 +1,21 @@
+type Query {
+  allItems: ItemsResponse!
+}
+
+type Mutation {
+  newItem(name: String!, price: Int!): ItemResponse!
+  deleteItem(id: ID!): ItemResponse!
+  updateItem(id: ID!, name: String, price: Int): ItemResponse!
+}
+
+type ItemsResponse {
+  success: Boolean!
+  error: String
+  items: [Item!]
+}
+
+type ItemResponse {
+  success: Boolean!
+  error: String
+  item: Item
+}
